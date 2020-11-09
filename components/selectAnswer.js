@@ -1,14 +1,14 @@
 import React from "react"
-function SelectAnswer() {
+function SelectAnswer({country}) {
     return (
         <div>
             <h2>What is your country?</h2>
-            <ul>
-                <li>A</li>
-                <li>B</li>
-                <li>C</li>
-                <li>D</li>
-            </ul>
+            {country.map(item => (
+            <div>
+                <button className="btn">{item.nativeName}</button>
+            </div>
+
+            ))}
             <button>Next</button>
         </div>
     )

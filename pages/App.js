@@ -3,17 +3,22 @@ import SelectAnswer from "../components/selectAnswer"
 const endPoint = "https://restcountries.eu/rest/v2/name/united"
 function App() {
     const [country, setCountry] = useState([])
-    async function FetchData() {
-        const res = await fetch(endPoint)
-        const data = await res.json()
-        console.log(data);
-        setCountry(data)
-    }
+    const fetchData = async() => {
+        try {
+         const res = await fetch(endPoint);
+         const data = await res.json();
+         setCountry(data)
+         console.log(data);
+        } catch(e) {
+         console.error(e);
+        }
+ }
+
     useEffect(() => {
-        FetchData()
-    })
+        fetchData()
+    },[])
     return (
-        <SelectAnswer/>
+        <SelectAnswer country={country}/>
     )
 }
 export default App;

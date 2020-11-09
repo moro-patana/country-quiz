@@ -29784,8 +29784,12 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function SelectAnswer() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "What is your country?"), /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, "A"), /*#__PURE__*/_react.default.createElement("li", null, "B"), /*#__PURE__*/_react.default.createElement("li", null, "C"), /*#__PURE__*/_react.default.createElement("li", null, "D")), /*#__PURE__*/_react.default.createElement("button", null, "Next"));
+function SelectAnswer({
+  country
+}) {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "What is your country?"), country.map(item => /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn"
+  }, item.nativeName))), /*#__PURE__*/_react.default.createElement("button", null, "Next"));
 }
 
 var _default = SelectAnswer;
@@ -29813,17 +29817,23 @@ const endPoint = "https://restcountries.eu/rest/v2/name/united";
 function App() {
   const [country, setCountry] = (0, _react.useState)([]);
 
-  async function FetchData() {
-    const res = await fetch(endPoint);
-    const data = await res.json();
-    console.log(data);
-    setCountry(data);
-  }
+  const fetchData = async () => {
+    try {
+      const res = await fetch(endPoint);
+      const data = await res.json();
+      setCountry(data);
+      console.log(data);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   (0, _react.useEffect)(() => {
-    FetchData();
+    fetchData();
+  }, []);
+  return /*#__PURE__*/_react.default.createElement(_selectAnswer.default, {
+    country: country
   });
-  return /*#__PURE__*/_react.default.createElement(_selectAnswer.default, null);
 }
 
 var _default = App;
@@ -29868,7 +29878,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50790" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49855" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
