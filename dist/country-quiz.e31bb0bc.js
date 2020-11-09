@@ -29772,7 +29772,24 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"components/selectAnswer.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"quiz.json":[function(require,module,exports) {
+module.exports = [{
+  "question": "What is the demonym of Tanzania?",
+  "answers": ["British", "Emirati", "Tanzanian", "American"],
+  "correct": "Tanzanian",
+  "id": 1604924795599
+}, {
+  "question": "What is the nativeName of Mexico",
+  "answers": ["United Kingdom", "Emirati", "Mexico", "American"],
+  "correct": "Mexico",
+  "id": 1604925015002
+}, {
+  "question": "Which one is Tanzania's flag?",
+  "answers": ["https://restcountries.eu/data/umi.svg", "https://restcountries.eu/data/tza.svg", "https://restcountries.eu/data/usa.svg", "https://restcountries.eu/data/mex.svg"],
+  "correct": "https://restcountries.eu/data/tza.svg",
+  "id": 1604925742520
+}];
+},{}],"components/selectAnswer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29782,19 +29799,21 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _quiz = _interopRequireDefault(require("../quiz.json"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function SelectAnswer({
   country
 }) {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "What is your country?"), country.map(item => /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    className: "btn"
-  }, item.nativeName))), /*#__PURE__*/_react.default.createElement("button", null, "Next"));
+  return /*#__PURE__*/_react.default.createElement("div", null, _quiz.default.map((item, index) => {
+    return /*#__PURE__*/_react.default.createElement("button", null, answers[index]);
+  }), /*#__PURE__*/_react.default.createElement("button", null, "Next"));
 }
 
 var _default = SelectAnswer;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"pages/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../quiz.json":"quiz.json"}],"pages/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29878,7 +29897,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49855" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51733" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

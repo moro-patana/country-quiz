@@ -1,15 +1,12 @@
 import React from "react"
+import QuizQuestion from "../quiz.json"
 function SelectAnswer({country}) {
     return (
         <div>
-            <h2>What is your country?</h2>
-            {country.map(item => (
-            <div>
-                <button className="btn">{item.nativeName}</button>
-            </div>
-
-            ))}
-            <button>Next</button>
+            {QuizQuestion.map((item, index) => {
+              return (<button>{answers[index]}</button>)
+})}
+        <button>Next</button>
         </div>
     )
 }
