@@ -1,7 +1,8 @@
 import React from "react"
+import SelectAnswer from "../components/selectAnswer"
 function App() {
     return (
-        <p>Hello</p>
+        <SelectAnswer/>
     )
 }
 export default App;
