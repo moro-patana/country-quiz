@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import SelectAnswer from "../components/selectAnswer"
+import Question from "../components/selectAnswer"
 const endPoint = "https://restcountries.eu/rest/v2/name/united"
 function App() {
     const [country, setCountry] = useState([])
@@ -18,7 +19,10 @@ function App() {
         fetchData()
     },[])
     return (
-        <SelectAnswer country={country}/>
+        <div>
+            <Question country={country}/>
+            <SelectAnswer country={country}/>
+        </div>
     )
 }
 export default App;
