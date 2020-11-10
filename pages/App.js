@@ -20,8 +20,9 @@ function App() {
     },[])
     return (
         <div>
-            <Question country={country}/>
-            <SelectAnswer country={country}/>
+            <SelectAnswer 
+            country={country}
+            />
         </div>
     )
 }
