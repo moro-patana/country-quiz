@@ -29773,24 +29773,22 @@ if ("development" === 'production') {
   module.exports = require('./cjs/react-dom.development.js');
 }
 },{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"quiz.js":[function(require,module,exports) {
-[{
+const questions = [{
   question: "Which country owns this flag",
   answers: ["British", "Estonia", "Tanzanian", "American"],
-  correct: "Estonia",
+  correct: "",
   id: 1604924795599
-} // {
-//     question: "What is the nativeName of Mexico",
-//     answers: ["United Kingdom", "Emirati", "Mexico", "American"],
-//     correct: "Mexico",
-//     id:1604925015002
-// },
-// {
-//     question: "Which one is Tanzania's flag?",
-//     answers: ["https://restcountries.eu/data/umi.svg", "https://restcountries.eu/data/tza.svg", "https://restcountries.eu/data/usa.svg", "https://restcountries.eu/data/mex.svg"],
-//     correct: "https://restcountries.eu/data/tza.svg",
-//     id:1604925742520
-// }
-];
+}, {
+  question: "What is the nativeName of Mexico",
+  answers: ["United Kingdom", "Emirati", "Mexico", "American"],
+  correct: "Mexico",
+  id: 1604925015002
+}, {
+  question: "Which one is Tanzania's flag?",
+  answers: ["https://restcountries.eu/data/umi.svg", "https://restcountries.eu/data/tza.svg", "https://restcountries.eu/data/usa.svg", "https://restcountries.eu/data/mex.svg"],
+  correct: "https://restcountries.eu/data/tza.svg",
+  id: 1604925742520
+}];
 },{}],"components/selectAnswer.js":[function(require,module,exports) {
 "use strict";
 
@@ -29811,10 +29809,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function SelectAnswer({
   country,
-  filterMexico
+  flag
 }) {
-  // const [mexFlag, setmexFlag] = useState("https://restcountries.eu/data/mex.svg")
-  // console.log(mexFlag);
   const [isOpen, setIsOpen] = (0, _react.useState)(false);
 
   function handleClick() {
@@ -29822,28 +29818,18 @@ function SelectAnswer({
     console.log("open");
   }
 
-  const correctAnswer = () => {
-    if (img.src === mexFlag) {
-      console.log("correct");
-    } else {
-      console.log("wrong");
-    }
-  };
-
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "Which one is Mexico's flag?"), /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     className: "flags"
   }, country.map(item => {
-    return /*#__PURE__*/_react.default.createElement("button", {
-      className: "btn"
-    }, /*#__PURE__*/_react.default.createElement("img", {
+    return /*#__PURE__*/_react.default.createElement("img", {
       src: item.flag
-    }));
-  }), /*#__PURE__*/_react.default.createElement("button", {
+    });
+  })), /*#__PURE__*/_react.default.createElement("h2", null, "Which country is the owner of that flag?"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", null, "Tanzanian"), /*#__PURE__*/_react.default.createElement("button", null, "Eeste"), /*#__PURE__*/_react.default.createElement("button", null, "Mexico"), /*#__PURE__*/_react.default.createElement("button", null, "Brazil")), /*#__PURE__*/_react.default.createElement("button", {
     className: "next",
     onClick: handleClick
   }, "Next"), isOpen && /*#__PURE__*/_react.default.createElement("div", {
     className: "popup"
-  }, /*#__PURE__*/_react.default.createElement("p", null, "You got 0 correct answer"), /*#__PURE__*/_react.default.createElement("button", null, "Try Again"))));
+  }, /*#__PURE__*/_react.default.createElement("p", null, "You got 0 correct answer"), /*#__PURE__*/_react.default.createElement("button", null, "Try Again")));
 }
 
 var _default = SelectAnswer;
@@ -29866,7 +29852,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-const endPoint = "https://restcountries.eu/rest/v2/all";
+const endPoint = "https://restcountries.eu/rest/v2/name/eesti";
 
 function App() {
   const [country, setCountry] = (0, _react.useState)([]);

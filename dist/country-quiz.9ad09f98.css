@@ -22,14 +22,10 @@
     color: white;
 }
 .flags {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    column-gap: 1rem;
-    row-gap: 1rem;
-}
+    text-align: left;
+ }
 img {
-    width: 100%;
+    width: 30%;
 }
 .popup {
     position: absolute;
