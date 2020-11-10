@@ -40,5 +40,11 @@ img {
     display: flex;
     flex-direction: column;
 }
+.option {
+    border: none;
+    border-radius: 15px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
 
 /*# sourceMappingURL=/country-quiz.9ad09f98.css.map */
