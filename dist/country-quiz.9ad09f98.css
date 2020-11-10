@@ -36,5 +36,9 @@ img {
     border-radius: 20px;
     margin: 0;
 }
+.option {
+    display: flex;
+    flex-direction: column;
+}
 
 /*# sourceMappingURL=/country-quiz.9ad09f98.css.map */
