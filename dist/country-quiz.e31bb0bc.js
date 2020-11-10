@@ -29772,23 +29772,25 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"quiz.json":[function(require,module,exports) {
-module.exports = [{
-  "question": "What is the demonym of Tanzania?",
-  "answers": ["British", "Emirati", "Tanzanian", "American"],
-  "correct": "Tanzanian",
-  "id": 1604924795599
-}, {
-  "question": "What is the nativeName of Mexico",
-  "answers": ["United Kingdom", "Emirati", "Mexico", "American"],
-  "correct": "Mexico",
-  "id": 1604925015002
-}, {
-  "question": "Which one is Tanzania's flag?",
-  "answers": ["https://restcountries.eu/data/umi.svg", "https://restcountries.eu/data/tza.svg", "https://restcountries.eu/data/usa.svg", "https://restcountries.eu/data/mex.svg"],
-  "correct": "https://restcountries.eu/data/tza.svg",
-  "id": 1604925742520
-}];
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"quiz.js":[function(require,module,exports) {
+[{
+  question: "Which country owns this flag",
+  answers: ["British", "Estonia", "Tanzanian", "American"],
+  correct: "Estonia",
+  id: 1604924795599
+} // {
+//     question: "What is the nativeName of Mexico",
+//     answers: ["United Kingdom", "Emirati", "Mexico", "American"],
+//     correct: "Mexico",
+//     id:1604925015002
+// },
+// {
+//     question: "Which one is Tanzania's flag?",
+//     answers: ["https://restcountries.eu/data/umi.svg", "https://restcountries.eu/data/tza.svg", "https://restcountries.eu/data/usa.svg", "https://restcountries.eu/data/mex.svg"],
+//     correct: "https://restcountries.eu/data/tza.svg",
+//     id:1604925742520
+// }
+];
 },{}],"components/selectAnswer.js":[function(require,module,exports) {
 "use strict";
 
@@ -29799,7 +29801,7 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _quiz = _interopRequireDefault(require("../quiz.json"));
+var _quiz = _interopRequireDefault(require("../quiz"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29808,9 +29810,27 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function SelectAnswer({
-  country
+  country,
+  filterMexico
 }) {
-  return /*#__PURE__*/_react.default.createElement("div", {
+  // const [mexFlag, setmexFlag] = useState("https://restcountries.eu/data/mex.svg")
+  // console.log(mexFlag);
+  const [isOpen, setIsOpen] = (0, _react.useState)(false);
+
+  function handleClick() {
+    setIsOpen(!isOpen);
+    console.log("open");
+  }
+
+  const correctAnswer = () => {
+    if (img.src === mexFlag) {
+      console.log("correct");
+    } else {
+      console.log("wrong");
+    }
+  };
+
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "Which one is Mexico's flag?"), /*#__PURE__*/_react.default.createElement("div", {
     className: "flags"
   }, country.map(item => {
     return /*#__PURE__*/_react.default.createElement("button", {
@@ -29819,13 +29839,16 @@ function SelectAnswer({
       src: item.flag
     }));
   }), /*#__PURE__*/_react.default.createElement("button", {
-    className: "next"
-  }, "Next"));
+    className: "next",
+    onClick: handleClick
+  }, "Next"), isOpen && /*#__PURE__*/_react.default.createElement("div", {
+    className: "popup"
+  }, /*#__PURE__*/_react.default.createElement("p", null, "You got 0 correct answer"), /*#__PURE__*/_react.default.createElement("button", null, "Try Again"))));
 }
 
 var _default = SelectAnswer;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../quiz.json":"quiz.json"}],"pages/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../quiz":"quiz.js"}],"pages/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29862,9 +29885,9 @@ function App() {
   (0, _react.useEffect)(() => {
     fetchData();
   }, []);
-  return /*#__PURE__*/_react.default.createElement(_selectAnswer.default, {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_selectAnswer.default, {
     country: country
-  });
+  }));
 }
 
 var _default = App;
@@ -29909,7 +29932,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55712" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50522" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

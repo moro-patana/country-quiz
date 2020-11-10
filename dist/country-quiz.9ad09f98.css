@@ -31,5 +31,14 @@
 img {
     width: 100%;
 }
+.popup {
+    position: absolute;
+    top: 14%;
+    background-color: white;
+    width: 90%;
+    height: 73%;
+    border-radius: 20px;
+    margin: 0;
+}
 
 /*# sourceMappingURL=/country-quiz.9ad09f98.css.map */
