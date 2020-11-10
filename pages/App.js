@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import SelectAnswer from "../components/selectAnswer"
 import Question from "../components/selectAnswer"
-const endPoint = "https://restcountries.eu/rest/v2/all"
+const endPoint = "https://restcountries.eu/rest/v2/name/eesti"
 function App() {
     const [country, setCountry] = useState([])
     const fetchData = async() => {
