@@ -29824,7 +29824,9 @@ function SelectAnswer({
     return /*#__PURE__*/_react.default.createElement("img", {
       src: item.flag
     });
-  })), /*#__PURE__*/_react.default.createElement("h2", null, "Which country is the owner of that flag?"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", null, "Tanzanian"), /*#__PURE__*/_react.default.createElement("button", null, "Eeste"), /*#__PURE__*/_react.default.createElement("button", null, "Mexico"), /*#__PURE__*/_react.default.createElement("button", null, "Brazil")), /*#__PURE__*/_react.default.createElement("button", {
+  })), /*#__PURE__*/_react.default.createElement("h2", null, "Which country is the owner of that flag?"), /*#__PURE__*/_react.default.createElement("div", {
+    className: "option"
+  }, /*#__PURE__*/_react.default.createElement("button", null, "Tanzanian"), /*#__PURE__*/_react.default.createElement("button", null, "Eeste"), /*#__PURE__*/_react.default.createElement("button", null, "Mexico"), /*#__PURE__*/_react.default.createElement("button", null, "Brazil")), /*#__PURE__*/_react.default.createElement("button", {
     className: "next",
     onClick: handleClick
   }, "Next"), isOpen && /*#__PURE__*/_react.default.createElement("div", {

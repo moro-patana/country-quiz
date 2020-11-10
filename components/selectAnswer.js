@@ -17,7 +17,7 @@ function SelectAnswer({country, flag}) {
                 })}
                 </div>
             <h2>Which country is the owner of that flag?</h2>
-            <div>
+            <div className="option">
                 <button>Tanzanian</button>
                 <button>Eeste</button>
                 <button>Mexico</button>
