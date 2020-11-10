@@ -17,11 +17,11 @@ function SelectAnswer({country, flag}) {
                 })}
                 </div>
             <h2>Which country is the owner of that flag?</h2>
-            <div className="option">
-                <button>Tanzanian</button>
-                <button>Eeste</button>
-                <button>Mexico</button>
-                <button>Brazil</button>
+            <div className="options">
+                <button className="option">Tanzanian</button>
+                <button className="option">Eeste</button>
+                <button className="option">Mexico</button>
+                <button className="option">Brazil</button>
             </div>
             <button className="next" onClick={handleClick}>Next</button>
             {isOpen && 
