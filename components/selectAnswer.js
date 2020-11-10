@@ -1,13 +1,13 @@
-import React from "react"
+import React, { useState } from "react"
 import QuizQuestion from "../quiz.json"
 function SelectAnswer({country}) {
     return (
-        <div>
-            {QuizQuestion.map((item, index) => {
-              return (<button>{answers[index]}</button>)
-})}
-        <button>Next</button>
-        </div>
+            <div className="flags">
+                {country.map(item => {
+                  return (<button className="btn"><img src={item.flag}/></button>)
+    })}
+            <button className="next">Next</button>
+            </div>
     )
 }
 export default SelectAnswer;
