@@ -29832,12 +29832,12 @@ function SelectAnswer({
     type: "button",
     className: "next",
     onClick: handleClick
-  }, "Next")), isOpen ? /*#__PURE__*/_react.default.createElement("div", {
+  }, "Next")), isOpen && /*#__PURE__*/_react.default.createElement("div", {
     className: "popup"
   }, /*#__PURE__*/_react.default.createElement("p", null, "You got 0 correct answer"), /*#__PURE__*/_react.default.createElement("button", {
     className: "try",
     onClick: handleClick
-  }, "Try Again")) : null);
+  }, "Try Again")));
 }
 
 var _default = SelectAnswer;

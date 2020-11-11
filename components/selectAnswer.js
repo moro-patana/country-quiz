@@ -41,12 +41,12 @@ function SelectAnswer({ country, dataCapital, getQuestion, fetchData }) {
                 </div>
                 <button type="button" className="next" onClick={handleClick}>Next</button>
             </div>
-            {isOpen 
-                ? <div className="popup">
+            {isOpen &&
+                <div className="popup">
                     <p>You got 0 correct answer</p>
                     <button className="try" onClick={handleClick}>Try Again</button>
                 </div>
-                : null}
+            }
         </div>
     )
 }
