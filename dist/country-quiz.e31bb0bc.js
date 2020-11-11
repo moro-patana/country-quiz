@@ -29812,6 +29812,7 @@ function SelectAnswer({
 
   function closeBtn() {
     setIsClosed(!isClosed);
+    console.log("closed");
   }
 
   function handleCheck() {
@@ -29819,7 +29820,7 @@ function SelectAnswer({
     fetchData();
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, random % 5 === 0 ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, random % 5 === 0 ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     src: correctFlag,
     alt: `This is ${correctName} flag`
   }), /*#__PURE__*/_react.default.createElement("p", null, "Which country does this flag belong to?")) : /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("strong", null, correctCapital), " is a capital city of"), /*#__PURE__*/_react.default.createElement("div", {
@@ -29831,12 +29832,12 @@ function SelectAnswer({
     type: "button",
     className: "next",
     onClick: handleClick
-  }, "Next"), isOpen && /*#__PURE__*/_react.default.createElement("div", {
+  }, "Next")), isOpen ? /*#__PURE__*/_react.default.createElement("div", {
     className: "popup"
   }, /*#__PURE__*/_react.default.createElement("p", null, "You got 0 correct answer"), /*#__PURE__*/_react.default.createElement("button", {
     className: "try",
-    onClick: closeBtn
-  }, "Try Again")));
+    onClick: handleClick
+  }, "Try Again")) : null);
 }
 
 var _default = SelectAnswer;
