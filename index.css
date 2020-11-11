@@ -4,16 +4,26 @@
     background-color: aliceblue;
     border-radius: 20px;
 }
-.btn {
+button {
     width: 100%;
     padding: 1rem;
     border: none;
     border-radius: 10px;
     margin-top: 1rem;
-    background-color: transparent;
 }
+.try {
+    width: 100px;
+    border: none;
+    border-radius: 15px;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: blue;
+    color: white;
+}
+
 .next {
     width: 100px;
+    height: 100%;
     padding: 1rem;
     border: none;
     background-color: blue;
@@ -40,9 +50,9 @@ img {
     display: flex;
     flex-direction: column;
 }
-.option {
-    border: none;
-    border-radius: 15px;
-    padding: 1rem;
-    margin-top: 1rem;
+.red-btn {
+    background-color: red;
+}
+.green-btn {
+    background-color: green;
 }
