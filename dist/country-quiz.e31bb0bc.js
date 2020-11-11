@@ -29773,22 +29773,7 @@ if ("development" === 'production') {
   module.exports = require('./cjs/react-dom.development.js');
 }
 },{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"quiz.js":[function(require,module,exports) {
-const questions = [{
-  question: "Which country owns this flag",
-  answers: ["British", "Estonia", "Tanzanian", "American"],
-  correct: "",
-  id: 1604924795599
-}, {
-  question: "What is the nativeName of Mexico",
-  answers: ["United Kingdom", "Emirati", "Mexico", "American"],
-  correct: "Mexico",
-  id: 1604925015002
-}, {
-  question: "Which one is Tanzania's flag?",
-  answers: ["https://restcountries.eu/data/umi.svg", "https://restcountries.eu/data/tza.svg", "https://restcountries.eu/data/usa.svg", "https://restcountries.eu/data/mex.svg"],
-  correct: "https://restcountries.eu/data/tza.svg",
-  id: 1604925742520
-}];
+
 },{}],"components/selectAnswer.js":[function(require,module,exports) {
 "use strict";
 
@@ -29809,37 +29794,55 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function SelectAnswer({
   country,
-  flag
+  dataCapital,
+  getQuestion,
+  fetchData
 }) {
   const [isOpen, setIsOpen] = (0, _react.useState)(false);
+  const [isClosed, setIsClosed] = (0, _react.useState)(true);
+  const [img, setImg] = (0, _react.useState)(country.flag);
+  const [random, setRandom] = (0, _react.useState)(0);
+  const correctFlag = country.flag;
+  const correctName = country.name;
+  const correctCapital = country.capital;
+  const [button, setButton] = (0, _react.useState)(country.name);
+  (0, _react.useEffect)(() => {
+    setImg(!img);
+    setRandom(Math.floor(Math.random() * 5));
+  }, []);
 
   function handleClick() {
     setIsOpen(!isOpen);
     console.log("open");
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
-    className: "flags"
-  }, country.map(item => {
-    return /*#__PURE__*/_react.default.createElement("img", {
-      src: item.flag
-    });
-  })), /*#__PURE__*/_react.default.createElement("h2", null, "Which country is the owner of that flag?"), /*#__PURE__*/_react.default.createElement("div", {
+  function closeBtn() {
+    setIsClosed(!isClosed);
+  }
+
+  function handleCheck() {
+    setButton(!button);
+    fetchData();
+  }
+
+  return /*#__PURE__*/_react.default.createElement("div", null, random % 5 === 0 ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: correctFlag,
+    alt: `This is ${correctName} flag`
+  }), /*#__PURE__*/_react.default.createElement("p", null, "Which country does this flag belong to?")) : /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("strong", null, correctCapital), " is a capital city of"), /*#__PURE__*/_react.default.createElement("div", {
     className: "options"
-  }, /*#__PURE__*/_react.default.createElement("button", {
-    className: "option"
-  }, "Tanzanian"), /*#__PURE__*/_react.default.createElement("button", {
-    className: "option"
-  }, "Eeste"), /*#__PURE__*/_react.default.createElement("button", {
-    className: "option"
-  }, "Mexico"), /*#__PURE__*/_react.default.createElement("button", {
-    className: "option"
-  }, "Brazil")), /*#__PURE__*/_react.default.createElement("button", {
+  }, dataCapital.map(item => /*#__PURE__*/_react.default.createElement("button", {
+    onClick: handleCheck,
+    className: button ? "red-btn" : "green-btn"
+  }, item.name))), /*#__PURE__*/_react.default.createElement("button", {
+    type: "button",
     className: "next",
     onClick: handleClick
   }, "Next"), isOpen && /*#__PURE__*/_react.default.createElement("div", {
     className: "popup"
-  }, /*#__PURE__*/_react.default.createElement("p", null, "You got 0 correct answer"), /*#__PURE__*/_react.default.createElement("button", null, "Try Again")));
+  }, /*#__PURE__*/_react.default.createElement("p", null, "You got 0 correct answer"), /*#__PURE__*/_react.default.createElement("button", {
+    className: "try",
+    onClick: closeBtn
+  }, "Try Again")));
 }
 
 var _default = SelectAnswer;
@@ -29862,17 +29865,23 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-const endPoint = "https://restcountries.eu/rest/v2/name/eesti";
+const endPoint = "https://restcountries.eu/rest/v2/all";
 
 function App() {
   const [country, setCountry] = (0, _react.useState)([]);
+  const [dataCapital, setDataCapital] = (0, _react.useState)([]);
 
   const fetchData = async () => {
     try {
       const res = await fetch(endPoint);
       const data = await res.json();
-      setCountry(data);
-      console.log(data);
+      const randomData = data[Math.floor(Math.random() * data.length)];
+      const capital1 = data[Math.floor(Math.random() * data.length)];
+      const capital2 = data[Math.floor(Math.random() * data.length)];
+      const capital3 = data[Math.floor(Math.random() * data.length)];
+      const optionCapital = [capital3, capital1, randomData, capital2];
+      setDataCapital(optionCapital);
+      setCountry(randomData);
     } catch (e) {
       console.error(e);
     }
@@ -29882,7 +29891,9 @@ function App() {
     fetchData();
   }, []);
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_selectAnswer.default, {
-    country: country
+    fetchData: fetchData,
+    country: country,
+    dataCapital: dataCapital
   }));
 }
 
@@ -29928,7 +29939,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50522" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63896" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
