@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react"
-import question from "../quiz"
-function SelectAnswer({country, dataCapital,getQuestion, fetchData}) {
+function SelectAnswer({ country, dataCapital, getQuestion, fetchData }) {
     const [isOpen, setIsOpen] = useState(false)
     const [isClosed, setIsClosed] = useState(true)
     const [img, setImg] = useState(country.flag)
     const [random, setRandom] = useState(0)
     const correctFlag = country.flag
-    const correctName =country.name
+    const correctName = country.name
     const correctCapital = country.capital
     const [button, setButton] = useState(country.name)
     useEffect(() => {
@@ -27,23 +26,23 @@ function SelectAnswer({country, dataCapital,getQuestion, fetchData}) {
     return (
 
         <div>
-            {random % 5 === 0 
-                ? 
-                <div> 
-                    <img src={correctFlag} alt={`This is ${correctName} flag`} /> 
+            {random % 5 === 0
+                ?
+                <div>
+                    <img src={correctFlag} alt={`This is ${correctName} flag`} />
                     <p>Which country does this flag belong to?</p>
                 </div>
                 : <p><strong>{correctCapital}</strong> is a capital city of</p>
             }
             <div className="options">
-            {dataCapital.map(item => <button onClick={handleCheck} className={button ? "red-btn" : "green-btn"}>{item.name}</button>)}
+                {dataCapital.map(item => <button onClick={handleCheck} className={button ? "red-btn" : "green-btn"}>{item.name}</button>)}
             </div>
             <button type="button" className="next" onClick={handleClick}>Next</button>
-            {isOpen && 
-            <div className="popup">
-                <p>You got 0 correct answer</p>
-                <button className="try" onClick={closeBtn}>Try Again</button>
-            </div>}
+            {isOpen &&
+                <div className="popup">
+                    <p>You got 0 correct answer</p>
+                    <button className="try" onClick={closeBtn}>Try Again</button>
+                </div>}
         </div>
     )
 }

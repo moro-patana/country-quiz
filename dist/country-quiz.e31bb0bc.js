@@ -29772,9 +29772,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"quiz.js":[function(require,module,exports) {
-
-},{}],"components/selectAnswer.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"components/selectAnswer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29783,10 +29781,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
-
-var _quiz = _interopRequireDefault(require("../quiz"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -29847,7 +29841,7 @@ function SelectAnswer({
 
 var _default = SelectAnswer;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../quiz":"quiz.js"}],"pages/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"pages/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29939,7 +29933,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63896" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53313" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
