@@ -24,7 +24,7 @@ main {
     content: "";
     top: 2%;
     right: -3%;
-    position: fixed;
+    position: absolute;
     width: 200px;
     height: 200px;
     background-image: url("/logo.f1d8a4c6.svg");
