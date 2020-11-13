@@ -23,11 +23,11 @@ function SelectAnswer({
               <img src={getCountry.flag} alt={`This is ${getCountry.name} flag`} />
               <p className="question">Which country does this flag belong to?</p>
             </div>
-            : <p className="question"><strong>{getCountry.name}</strong> is a capital city of</p>
+            : <p className="question"><strong>{getCountry.capital}</strong> is a capital city of</p>
           }
 
           <div className="option-answer">
-            {answerText.map(answer => <button onClick={handleScore} className="btn" value={answer.capital}>{answer.capital}</button>)}
+            {answerText.map(answer => <button onClick={handleScore} className="btn" value={answer.name}>{answer.name}</button>)}
           </div>
           {isCorrect && <button className="next" onClick={handleOpenModal}>Next</button>}
         </div>

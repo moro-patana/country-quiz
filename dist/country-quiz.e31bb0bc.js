@@ -29809,13 +29809,13 @@ function SelectAnswer({
     className: "question"
   }, "Which country does this flag belong to?")) : /*#__PURE__*/_react.default.createElement("p", {
     className: "question"
-  }, /*#__PURE__*/_react.default.createElement("strong", null, getCountry.name), " is a capital city of"), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("strong", null, getCountry.capital), " is a capital city of"), /*#__PURE__*/_react.default.createElement("div", {
     className: "option-answer"
   }, answerText.map(answer => /*#__PURE__*/_react.default.createElement("button", {
     onClick: handleScore,
     className: "btn",
-    value: answer.capital
-  }, answer.capital))), isCorrect && /*#__PURE__*/_react.default.createElement("button", {
+    value: answer.name
+  }, answer.name))), isCorrect && /*#__PURE__*/_react.default.createElement("button", {
     className: "next",
     onClick: handleOpenModal
   }, "Next")) : /*#__PURE__*/_react.default.createElement("div", {
@@ -29893,8 +29893,9 @@ function App() {
   }
 
   function handleScore(e) {
-    setIsCorrect(getCountry.capital); // console.log(getCountry.capital);
-
+    setIsCorrect(getCountry.name);
+    console.log(getCountry.name);
+    console.log(getCountry.capital);
     const button = e.target.value;
 
     if (isCorrect === button) {
