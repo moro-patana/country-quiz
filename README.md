@@ -108,3 +108,46 @@ $ npm start
 -   Website [your-website.com](https://{your-web-site-link})
 -   GitHub [@your-username](https://{github.com/your-usermame})
 -   Twitter [@your-twitter](https://{twitter.com/your-username})
+
+# Quiz
+## Steps:
+ - Install react and react-dom
+ - Create index.html and add div has id root inside.
+ - create index.js and link it to the index.html.
+ - Create a folder where you store the components or images. 
+
+ ### Let's start:
+   1. Index.js file
+
+      1.1. Import react, react-dom and the App function.
+
+      1.2. Get the element by its id (root) and use render.
+
+   2. App file
+
+      2.1. Import react and components files which we need.
+
+      2.2. Create variables by using state.
+
+      2.3. Fetch data from api and random them(use random() method).
+
+      2.4. Create all the function which we will use in this file and structure them so that we can use them in another file.
+
+      2.4. Do not forget to export the App function as a default.
+
+  3. Component file:
+     I only have one file has name selectAnswer.
+      - Import react and another function we need.
+      - Built an JSX html(maping through an array, handleClick for buttons etc)
+
+  4. index.css file;
+
+    * Store all the styles to make the code look better and alive.
+
+
+**NB**: Nice challenge!
+Learn new thing and make use more creative.
+
+  
+
+  
