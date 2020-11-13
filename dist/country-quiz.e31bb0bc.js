@@ -29912,7 +29912,7 @@ function App() {
       setIsOpen(isOpen);
       console.log("false");
     }
-  } // If the answer is wrong, let the user try again
+  } // If the answer is wrong, let the user try
 
 
   function handleTry() {

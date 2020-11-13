@@ -58,7 +58,7 @@ function App() {
         }
     }
 
-  // If the answer is wrong, let the user try again
+  // If the answer is wrong, let the user try
     function handleTry() {
         setTrial(!trial)
         fetchData()
