@@ -29901,7 +29901,6 @@ function App() {
     if (isCorrect === button) {
       console.log("True");
       setScore(score + 1);
-      fetchData();
     } else {
       console.log("false");
     }
