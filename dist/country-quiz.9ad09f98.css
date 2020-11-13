@@ -108,13 +108,13 @@ h3 {
     color: #51e47d;
     font-size: 20px;
 }
-@media (min-width:1114px) {
+@media (min-width: 1114px) {
     main {
-        max-width: 1114px;
-        margin: 0 auto;
+        padding-left: 30%;
+        padding-right: 30%;
     }
-    #root {
-        text-align: center;
+    #root::before {
+        right: 27%;
     }
 }
 
