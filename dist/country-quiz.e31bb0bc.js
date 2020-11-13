@@ -29824,7 +29824,9 @@ function SelectAnswer({
     className: "cup",
     src: _winer.default,
     alt: "Logo of winer"
-  }), /*#__PURE__*/_react.default.createElement("h3", null, "Result"), /*#__PURE__*/_react.default.createElement("span", null, "You got ", score, " correct answer"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
+  }), /*#__PURE__*/_react.default.createElement("h3", null, "Result"), /*#__PURE__*/_react.default.createElement("span", null, "You got ", /*#__PURE__*/_react.default.createElement("span", {
+    className: "score"
+  }, score), " correct answer"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("button", {
     className: "try-btn",
     onClick: handleTry
   }, "Try again")));
@@ -29968,7 +29970,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56396" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57509" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -35,7 +35,7 @@ function SelectAnswer({
          <div className="win">
            <img className="cup" src={WinLogo} alt="Logo of winer"/>
            <h3>Result</h3>
-           <span>You got {score} correct answer</span>
+           <span>You got <span className="score">{score}</span> correct answer</span>
            <br></br>
            <button className="try-btn" onClick={handleTry}>Try again</button>
         </div>
