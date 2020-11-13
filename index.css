@@ -109,7 +109,7 @@ h3 {
     font-size: 20px;
 }
 @media (min-width: 1114px) {
-    main {
+    main, body > header {
         padding-left: 30%;
         padding-right: 30%;
     }
