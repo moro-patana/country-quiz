@@ -34,8 +34,9 @@ function App() {
         setIsOpen(!isOpen)
     }
     function handleScore(e) {
-        setIsCorrect(getCountry.capital)
-        // console.log(getCountry.capital);
+        setIsCorrect(getCountry.name)
+        console.log(getCountry.name);
+        console.log(getCountry.capital);
         const button = e.target.value
         if(isCorrect === button) {
             console.log("True");
