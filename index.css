@@ -1,119 +1,135 @@
+html {
+    font-family: "Poppins";
+}
 body {
-    background-color: #3546d8;
+    margin: 0;
+    padding: 1rem;
+    background: #6066D0 70%;
 }
 h1 {
     margin: 0;
-    padding: 0;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 36px;
     line-height: 54px;
     text-transform: uppercase;
-    color: #f2f2f2;
+    color: #F2F2F2;
+    padding-bottom: 10px;
 }
-main {
-    padding: 1rem;
+.flag-image {
+    width: 84px;
+    height: 54px;
+    border-radius: 4px;
 }
-#root {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 15px;
-}
-#root::before {
-    content: "";
-    top: 2%;
-    right: -3%;
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background-image: url("./img/logo.svg");
-    background-repeat: no-repeat;
-}
-.option-answer {
+.flag-image,
+.question {
     display: flex;
-    flex-direction: column;
-    padding-top: 1rem;
-}
-.btn {
-    font-size: 18px;
-    border-radius: 12px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 2px solid rgba(96,102,208,.7);
-    color: rgba(96,102,208,.7);
-    text-align: center;
-}
-.btn:hover {
-    background-color: orange;
-}
-p {
-    font-size: 34px;
-    color: #2f527b;
-}
-img {
-    width: 30%;
-}
-.cup {
-    width: 238px;
 }
 .question {
-    padding-top: 8%;
-    padding-bottom: 1rem;
     margin: 0;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #2f527b;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+b {
+    color: green;
+    padding-top: 35px;
+    padding-right: 10px;
+}
+.quiz-image {
+    position: absolute;
+    right: 17px;
+    top: 7px;
+}
+.answer-button {
+    display: flex;
+    flex-direction: column;
+}
+.answer {
+     background: #fff;
+    border: 2px solid rgba(96,102,208,.7);
+    box-sizing: border-box;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 1rem;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    color: rgba(96, 102, 208, 0.8);
+}
+.green:focus {
+    background-color: green;
+    color: #fff;
+}
+.red:focus {
+    background-color: red;
+    color: #fff;
+}
+.popup,
+.quiz-card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 1rem;
+}
+.quiz-card {
+    text-align: center;
 }
 .next {
     width: 116px;
     height: 56px;
     border: none;
-    background: #f9a826;
-    box-shadow: 0 2px 4px rgba(252,168,47,.4);
-    border-radius: 12px;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 18px;
     line-height: 27px;
     color: #fff;
-    margin-left: 70%;
-}
-.win {
-    text-align: center;
-    padding-top: 20%;
-    padding-bottom: 17%;
-}
-h3 {
-    font-family: "Poppins";
-    font-style: normal;
-    font-size: 24px;
-    line-height: 36px;
-    color: #2f527b
+    background: #F9A826;
+    box-shadow: 0px 2px 4px rgba(252, 168, 47, 0.4);
+    border-radius: 12px;
 }
 .try-btn {
     width: 209px;
     height: 62px;
-    border: 2px solid #1d355d;
-    box-sizing: border-box;
-    border-radius: 12px;
-    background: #fff;
-    font-family: Poppins;
-    font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 27px;
-    color: #1d355d;
-    margin-top: 2rem;
+    color: #1D355D;
+    left: 615px;
+    top: 699px;
+    border: 2px solid #1D355D;
+    box-sizing: border-box;
+    border-radius: 12px;
+    margin-top: 50px;
+}
+h3 {
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 72px;
+    color: #1D355D;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+span {
+    font-size: 18px;
+    line-height: 27px;
+    color: #1D355D;
 }
 .score {
     color: #51e47d;
-    font-size: 20px;
+    font-size: 25px;
 }
+
 @media (min-width: 1114px) {
-    main, body > header {
-        padding-left: 30%;
-        padding-right: 30%;
+    #root {
+        max-width: 560px;
+        margin: 0 auto;
     }
-    #root::before {
-        right: 27%;
+    .quiz-image {
+        position: absolute;
+        right: 398px;
+        top: 7px;
     }
+    
 }
