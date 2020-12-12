@@ -34015,7 +34015,7 @@ function Questions() {
     className: "question"
   }, "Which country does this flag belong to?")) : /*#__PURE__*/_react.default.createElement("p", {
     className: "question"
-  }, /*#__PURE__*/_react.default.createElement("b", null, countries?.capital), " is a capital city of?"))));
+  }, /*#__PURE__*/_react.default.createElement("b", null, countries?.capital), /*#__PURE__*/_react.default.createElement("br", null), " is a capital city of?"))));
 }
 },{"react":"node_modules/react/index.js","../pages/Context":"pages/Context.js"}],"components/Answers.js":[function(require,module,exports) {
 "use strict";
