@@ -11,7 +11,6 @@ export default function Answers() {
         isTryAgain,
         takeNextQuestion,
         openPopup } = useContext(Context)
-        console.log(countries);
     return (
         <div className="answer-container">
             {answerText.map(answer => (

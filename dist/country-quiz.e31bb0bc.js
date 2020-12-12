@@ -34044,7 +34044,6 @@ function Answers() {
     takeNextQuestion,
     openPopup
   } = (0, _react.useContext)(_Context.Context);
-  console.log(countries);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "answer-container"
   }, answerText.map(answer => /*#__PURE__*/_react.default.createElement("div", {
@@ -34181,7 +34180,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57799" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61570" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
