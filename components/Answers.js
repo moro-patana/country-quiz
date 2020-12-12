@@ -11,10 +11,11 @@ export default function Answers() {
         isTryAgain,
         takeNextQuestion,
         openPopup } = useContext(Context)
+        console.log(countries);
     return (
         <div className="answer-container">
             {answerText.map(answer => (
-                <div className="answer-button" key={answer.area}>
+                <div className="answer-button" key={answer.name}>
                     <button onClick={handleClick} ref={buttonRef} className={countries.name === answer.name ? "answer green" : "answer red"} key={answer.name} value={answer.name} id={answer.name}>
                         {answer.name}
                     </button>

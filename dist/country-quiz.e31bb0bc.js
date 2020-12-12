@@ -34044,11 +34044,12 @@ function Answers() {
     takeNextQuestion,
     openPopup
   } = (0, _react.useContext)(_Context.Context);
+  console.log(countries);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "answer-container"
   }, answerText.map(answer => /*#__PURE__*/_react.default.createElement("div", {
     className: "answer-button",
-    key: answer.area
+    key: answer.name
   }, /*#__PURE__*/_react.default.createElement("button", {
     onClick: handleClick,
     ref: buttonRef,
