@@ -69,7 +69,6 @@ export default function ContextProvider({ children }) {
                 handleClick,
                 isCorrect, 
                 isTryAgain, 
-                buttonRef, 
                 takeNextQuestion, 
                 retry, 
                 openPopup, 
