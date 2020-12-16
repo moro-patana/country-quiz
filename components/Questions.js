@@ -13,7 +13,7 @@ export default function Questions() {
                             <img className="flag-image" src={countries?.flag} alt={`This is ${countries?.name} flag`} />
                             <p className="question">Which country does this flag belong to?</p>
                         </div>
-                        : <p className="question"><b>{countries?.capital}</b><br></br> is a capital city of?</p>
+                        : <p className="question">{countries?.capital} is a capital city of?</p>
                     }
 
                 </div>

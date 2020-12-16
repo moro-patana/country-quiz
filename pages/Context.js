@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 const endPoint = "https://restcountries.eu/rest/v2/all"
 const Context = React.createContext()
 
@@ -12,6 +12,8 @@ export default function ContextProvider({ children }) {
     const [isOpen, setIsOpen] = useState(false)
     const [score, setScore] = useState(0)
 
+    const buttonRef = useRef();
+
     async function fetchCountries() {
         const res = await fetch(endPoint)
         const data = await res.json()
@@ -22,8 +24,10 @@ export default function ContextProvider({ children }) {
         const answerOption3 = data[Math.floor(Math.random() * data.length)]
         const answerOptions = [answerOption3, answerOption1, randomData, answerOption2];
         answerOptions.sort(() => { return 0.5 - Math.random() });
+        console.log(answerOptions);
         setAnswerText(answerOptions)
     }
+    console.log(countries);
     useEffect(() => {
         fetchCountries()
         setRandom(Math.floor(Math.random() * 5))
@@ -31,15 +35,17 @@ export default function ContextProvider({ children }) {
 
 
     function handleClick(e) {
+        console.log(countries.name)
         e.preventDefault()
-        document.getElementById(countries.name).style.background = 'green';
-        document.getElementById(countries.name).style.color = 'white';
-        if (countries.name === e.target.value) {
+        if (countries.name === e.currentTarget.value) {
+            e.currentTarget.classList.add("green")
             setIsCorrect(true)
-            setNextQuestion(!nextQuestion)
+            setNextQuestion(true)
             setIsTryAgain(false)
             setScore(score + 1)
         } else {
+            e.currentTarget.classList.add("red")
+            buttonRef.current.classList.add("green")
             setIsCorrect(false)
             setIsTryAgain(true)
         }
@@ -51,28 +57,32 @@ export default function ContextProvider({ children }) {
     }
     function openPopup(e) {
         e.preventDefault()
-        if (countries.name != e.target.value) {
+        if (countries.name != e.currentTarget.value) {
             setIsOpen(true);
         }
     }
     function retry() {
         setIsOpen(false)
         fetchCountries()
+        setNextQuestion(true)
+        setIsTryAgain(false)
     }
 
     return (
         <Context.Provider
             value={{
-                countries, 
-                answerText, 
-                random, 
+                countries,
+                answerText,
+                random,
                 handleClick,
-                isCorrect, 
-                isTryAgain, 
-                takeNextQuestion, 
-                retry, 
-                openPopup, 
-                isOpen, 
+                nextQuestion,
+                isCorrect,
+                isTryAgain,
+                buttonRef,
+                takeNextQuestion,
+                retry,
+                openPopup,
+                isOpen,
                 score
             }}
         >
