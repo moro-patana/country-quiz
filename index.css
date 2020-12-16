@@ -121,7 +121,7 @@ h3 {
     line-height: 36px;
 }
 .green {
-    background-color: green;
+    background-color: #60BF88;
     color: #fff;
     background-image: url("./img/check_circle_outline-24px.svg");
     background-repeat: no-repeat;
@@ -141,16 +141,16 @@ h3 {
 }
 .green:hover,
 .green:focus {
-    background-color: green;
+    background-color: #60BF88;
 }
 .red:hover,
 .red:focus {
-    background-color: red;
+    background-color: #EA8282;
 }
 
 
 .red {
-    background-color: red;
+    background-color: #EA8282;
     color: #fff;
     background-image: url("./img/highlight_off-24px.svg");
     background-repeat: no-repeat;
@@ -166,7 +166,7 @@ h3 {
     }
     .quiz-image {
         position: absolute;
-        right: 380px;
+        right: 38px;
         top: 10px;
     }
     
