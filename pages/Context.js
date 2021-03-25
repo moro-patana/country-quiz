@@ -11,6 +11,7 @@ export default function ContextProvider({ children }) {
     const [isTryAgain, setIsTryAgain] = useState(false);
     const [isOpen, setIsOpen] = useState(false)
     const [score, setScore] = useState(0)
+    const [disabled, setDisabled] = useState(false)
 
     const buttonRef = useRef();
 
@@ -37,6 +38,7 @@ export default function ContextProvider({ children }) {
     function handleClick(e) {
         console.log(countries.name)
         e.preventDefault()
+        setDisabled(true)
         if (countries.name === e.currentTarget.value) {
             e.currentTarget.classList.add("green")
             setIsCorrect(true)
@@ -49,23 +51,27 @@ export default function ContextProvider({ children }) {
             setIsCorrect(false)
             setIsTryAgain(true)
         }
+
     }
     function takeNextQuestion() {
         setNextQuestion(true)
         fetchCountries()
         setIsCorrect(false)
+        setDisabled(false)
     }
     function openPopup(e) {
         e.preventDefault()
         if (countries.name != e.currentTarget.value) {
             setIsOpen(true);
         }
+        setDisabled(false)
     }
     function retry() {
         setIsOpen(false)
         fetchCountries()
         setNextQuestion(true)
         setIsTryAgain(false)
+        setDisabled(false)
     }
 
     return (
@@ -83,7 +89,8 @@ export default function ContextProvider({ children }) {
                 retry,
                 openPopup,
                 isOpen,
-                score
+                score,
+                disabled
             }}
         >
             {children}

@@ -10,11 +10,13 @@ export default function Answers() {
         isCorrect,
         isTryAgain,
         takeNextQuestion,
-        openPopup } = useContext(Context)
+        openPopup,
+        disabled } = useContext(Context)
     return (
         <div className="answer-container">
             {answerText.map((answer, index) => (
                 <button
+                    disabled={disabled}
                     onClick={handleClick}
                     ref={answer.name === countries.name ? buttonRef : null}
                     className="answer-button"

@@ -33902,6 +33902,7 @@ function ContextProvider({
   const [isTryAgain, setIsTryAgain] = (0, _react.useState)(false);
   const [isOpen, setIsOpen] = (0, _react.useState)(false);
   const [score, setScore] = (0, _react.useState)(0);
+  const [disabled, setDisabled] = (0, _react.useState)(false);
   const buttonRef = (0, _react.useRef)();
 
   async function fetchCountries() {
@@ -33929,6 +33930,7 @@ function ContextProvider({
   function handleClick(e) {
     console.log(countries.name);
     e.preventDefault();
+    setDisabled(true);
 
     if (countries.name === e.currentTarget.value) {
       e.currentTarget.classList.add("green");
@@ -33948,6 +33950,7 @@ function ContextProvider({
     setNextQuestion(true);
     fetchCountries();
     setIsCorrect(false);
+    setDisabled(false);
   }
 
   function openPopup(e) {
@@ -33956,6 +33959,8 @@ function ContextProvider({
     if (countries.name != e.currentTarget.value) {
       setIsOpen(true);
     }
+
+    setDisabled(false);
   }
 
   function retry() {
@@ -33963,6 +33968,7 @@ function ContextProvider({
     fetchCountries();
     setNextQuestion(true);
     setIsTryAgain(false);
+    setDisabled(false);
   }
 
   return /*#__PURE__*/_react.default.createElement(Context.Provider, {
@@ -33979,7 +33985,8 @@ function ContextProvider({
       retry,
       openPopup,
       isOpen,
-      score
+      score,
+      disabled
     }
   }, children);
 }
@@ -34045,11 +34052,13 @@ function Answers() {
     isCorrect,
     isTryAgain,
     takeNextQuestion,
-    openPopup
+    openPopup,
+    disabled
   } = (0, _react.useContext)(_Context.Context);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "answer-container"
   }, answerText.map((answer, index) => /*#__PURE__*/_react.default.createElement("button", {
+    disabled: disabled,
     onClick: handleClick,
     ref: answer.name === countries.name ? buttonRef : null,
     className: "answer-button",
@@ -34194,7 +34203,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63284" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55332" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

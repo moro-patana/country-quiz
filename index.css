@@ -27,14 +27,17 @@ h3 {
 
 .quiz-image {
     position: absolute;
-    top: 10px;
-    right: 16px;
+    top: -70px;
+    right: 0;
 }
 .flag-image {
     width: 84px;
     height: 54px;
     border-radius: 4px;
     padding-top: 26px;
+}
+.quiz-card {
+    position: relative;
 }
 .quiz-card,
 .popup {
@@ -111,6 +114,9 @@ h3 {
     background-color: orange;
     color: #fff;
 }
+.answer-button:disabled {
+    pointer-events: none;
+}
 .country-name {
     font-size: 18px;
    line-height: 27px;
@@ -163,11 +169,6 @@ h3 {
     }
     .quiz-card {
         width: 464px;
-    }
-    .quiz-image {
-        position: absolute;
-        right: 383px;
-        top: 10px;
     }
     
 } 
