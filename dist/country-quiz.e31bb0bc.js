@@ -33917,18 +33917,15 @@ function ContextProvider({
     answerOptions.sort(() => {
       return 0.5 - Math.random();
     });
-    console.log(answerOptions);
     setAnswerText(answerOptions);
   }
 
-  console.log(countries);
   (0, _react.useEffect)(() => {
     fetchCountries();
-    setRandom(Math.floor(Math.random() * 5));
+    setRandom(Math.floor(Math.random() * 2));
   }, []);
 
   function handleClick(e) {
-    console.log(countries.name);
     e.preventDefault();
     setDisabled(true);
 
@@ -34203,7 +34200,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55332" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56398" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

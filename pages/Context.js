@@ -25,18 +25,15 @@ export default function ContextProvider({ children }) {
         const answerOption3 = data[Math.floor(Math.random() * data.length)]
         const answerOptions = [answerOption3, answerOption1, randomData, answerOption2];
         answerOptions.sort(() => { return 0.5 - Math.random() });
-        console.log(answerOptions);
         setAnswerText(answerOptions)
     }
-    console.log(countries);
     useEffect(() => {
         fetchCountries()
-        setRandom(Math.floor(Math.random() * 5))
+        setRandom(Math.floor(Math.random() * 2))
     }, [])
 
 
     function handleClick(e) {
-        console.log(countries.name)
         e.preventDefault()
         setDisabled(true)
         if (countries.name === e.currentTarget.value) {
