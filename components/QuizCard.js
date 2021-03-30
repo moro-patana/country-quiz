@@ -9,9 +9,9 @@ export default function QuizCard() {
     const { isOpen, score, retry } = useContext(Context)
     return (
         <div className="quiz-card">
-            <img className="quiz-image" src={QuizLogo} alt="Quiz logo" />
             {!isOpen
                 ? <div>
+                    <img className="quiz-image" src={QuizLogo} alt="Quiz logo" />
                     <Questions />
                     <Answers />
                 </div>

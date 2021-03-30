@@ -20,7 +20,7 @@ export default function Answers() {
                     onClick={handleClick}
                     ref={answer.name === countries.name ? buttonRef : null}
                     className="answer-button"
-                    key={answer.name}
+                    key={answer.alpha3Code}
                     value={answer.name}
                     id={answer.name}>
                     <span className="alpha">{index === 0 ? "A" : index === 1 ? "B" : index === 2 ? "C" : index === 3 ? "D" : ""}</span>

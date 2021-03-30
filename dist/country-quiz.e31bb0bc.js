@@ -33908,12 +33908,19 @@ function ContextProvider({
   async function fetchCountries() {
     const res = await fetch(endPoint);
     const data = await res.json();
-    const randomData = data[Math.floor(Math.random() * data.length)];
-    setCountries(randomData);
-    const answerOption1 = data[Math.floor(Math.random() * data.length)];
-    const answerOption2 = data[Math.floor(Math.random() * data.length)];
-    const answerOption3 = data[Math.floor(Math.random() * data.length)];
-    const answerOptions = [answerOption3, answerOption1, randomData, answerOption2];
+    let indexes = new Set([Math.floor(Math.random() * data.length)]);
+
+    while (indexes.size < 4) {
+      indexes.add(Math.floor(Math.random() * data.length));
+    }
+
+    indexes = [...indexes];
+    const answerOption1 = data[indexes[0]];
+    const answerOption2 = data[indexes[1]];
+    const answerOption3 = data[indexes[2]];
+    const answerOption4 = data[indexes[3]];
+    setCountries(answerOption4);
+    const answerOptions = [answerOption3, answerOption1, answerOption4, answerOption2];
     answerOptions.sort(() => {
       return 0.5 - Math.random();
     });
@@ -33922,7 +33929,7 @@ function ContextProvider({
 
   (0, _react.useEffect)(() => {
     fetchCountries();
-    setRandom(Math.floor(Math.random() * 2));
+    setRandom(Math.floor(Math.random() * 5));
   }, []);
 
   function handleClick(e) {
@@ -34014,7 +34021,7 @@ function Questions() {
     className: "question-component"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "question-container"
-  }, /*#__PURE__*/_react.default.createElement("div", null, random % 2 === 0 ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+  }, /*#__PURE__*/_react.default.createElement("div", null, random % 5 === 0 ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     className: "flag-image",
     src: countries?.flag,
     alt: `This is ${countries?.name} flag`
@@ -34059,7 +34066,7 @@ function Answers() {
     onClick: handleClick,
     ref: answer.name === countries.name ? buttonRef : null,
     className: "answer-button",
-    key: answer.name,
+    key: answer.alpha3Code,
     value: answer.name,
     id: answer.name
   }, /*#__PURE__*/_react.default.createElement("span", {
@@ -34114,11 +34121,11 @@ function QuizCard() {
   } = (0, _react.useContext)(_Context.Context);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "quiz-card"
-  }, /*#__PURE__*/_react.default.createElement("img", {
+  }, !isOpen ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     className: "quiz-image",
     src: _logo.default,
     alt: "Quiz logo"
-  }), !isOpen ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Questions.default, null), /*#__PURE__*/_react.default.createElement(_Answers.default, null)) : /*#__PURE__*/_react.default.createElement("div", {
+  }), /*#__PURE__*/_react.default.createElement(_Questions.default, null), /*#__PURE__*/_react.default.createElement(_Answers.default, null)) : /*#__PURE__*/_react.default.createElement("div", {
     className: "popup"
   }, /*#__PURE__*/_react.default.createElement("img", {
     className: "cup",
@@ -34200,7 +34207,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54567" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61552" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

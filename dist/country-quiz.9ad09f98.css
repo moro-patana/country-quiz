@@ -166,8 +166,10 @@ img {
     background-color: #60BF88;
     color: #fff;
     background-image: url("/check_circle_outline-24px.ea854633.svg");
+    background-size: 20px;
     background-repeat: no-repeat;
-    background-position: top 50% right 10px;
+    background-position: top 50% right 18px;
+    border: none;
 }
 
 .green > *,
@@ -195,9 +197,12 @@ img {
     background-color: #EA8282;
     color: #fff;
     background-image: url("/highlight_off-24px.7c320923.svg");
+    background-size: 20px;
     background-repeat: no-repeat;
-    background-position: top 50% right 10px;
+    background-position: top 50% right 18px;
+    border: none;
 }
+
 @media (min-width: 1114px) {
     #root{
         max-width: 464px;
