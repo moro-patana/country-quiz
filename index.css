@@ -5,7 +5,9 @@ html {
 body {
     margin: 0;
     padding: 1rem;
-    background-color: rgba(96, 102, 208, 0.7);;
+    background-image: url("./img/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 h1 {
     margin: 0;
@@ -14,7 +16,6 @@ h1 {
     line-height: 54px;
     text-transform: uppercase;
     color: #F2F2F2;
-    padding-bottom: 60px;
 }
 h3 {
     font-weight: bold;
@@ -22,7 +23,7 @@ h3 {
     line-height: 72px;
     color: #1D355D;
     margin: 0;
-    padding-top: 72px;
+    padding-top: 74.8px;
 }
 button {
     cursor: pointer;
@@ -30,7 +31,21 @@ button {
 img {
     width: 100%;
 }
-
+.cup {
+    width: 238px;
+    height: 128.58px;
+}
+.main {
+    padding-top: 188px;
+    padding-bottom: 332px;
+}
+.quiz-card {
+    max-width: 464px;
+    padding-top: 68px;
+    padding-bottom: 68px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
 .quiz-image {
     position: absolute;
     top: -70px;
@@ -58,10 +73,12 @@ img {
 }
 .try-btn {
     margin-top: 71px;
-    width: 209px;
-    height: 62px;
-    font-weight: 600;
+    padding-top: 18px;
+    padding-bottom: 17px;
+    padding-left: 61px;
+    padding-right: 61px;
     font-size: 18px;
+    font-weight: 600;
     line-height: 27px;
     color: #1D355D;
     border: 2px solid #1D355D;
@@ -84,6 +101,9 @@ img {
     font-size: 24px;
     line-height: 36px;
     color: #2F527B;
+    padding-top: 26.18px;
+    padding-bottom: 32px;
+    margin: 0;
 }
 .next-button {
     text-align: right;
@@ -105,23 +125,30 @@ img {
 .answer-container {
     display: flex;
     flex-direction: column;
+    gap: 32px;
 }
 .answer-button {
     background: #FFFFFF;
     border: 2px solid rgba(96, 102, 208, 0.7);
     box-sizing: border-box;
     border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 31px;
     text-align: left;
     color: rgba(96, 102, 208, 0.8);
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 47px;
+    align-items: center;
+    padding-top: 15px;
+    padding-left: 19px;
+    padding-bottom: 14px;
 }
 .answer-button:hover {
     outline: none;
     border: none;
     background-color: orange;
     color: #fff;
+    border: 2px solid orange;
 }
 .answer-button:disabled {
     pointer-events: none;
@@ -173,13 +200,9 @@ img {
 }
 @media (min-width: 1114px) {
     #root{
-        max-width: 465px;
+        max-width: 464px;
         margin: 0 auto;
     }
-    .quiz-card {
-        width: 464px;
-    }
-    
 } 
 
 
