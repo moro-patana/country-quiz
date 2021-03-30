@@ -18,18 +18,23 @@ export default function ContextProvider({ children }) {
     async function fetchCountries() {
         const res = await fetch(endPoint)
         const data = await res.json()
-        const randomData = data[Math.floor(Math.random() * data.length)]
-        setCountries(randomData)
-        const answerOption1 = data[Math.floor(Math.random() * data.length)]
-        const answerOption2 = data[Math.floor(Math.random() * data.length)]
-        const answerOption3 = data[Math.floor(Math.random() * data.length)]
-        const answerOptions = [answerOption3, answerOption1, randomData, answerOption2];
+        let indexes = new Set([Math.floor(Math.random() * data.length)])
+        while(indexes.size < 4) {
+            indexes.add(Math.floor(Math.random() * data.length))
+        }
+        indexes = [... indexes];
+        const answerOption1 = data[indexes[0]]
+        const answerOption2 = data[indexes[1]]
+        const answerOption3 = data[indexes[2]]
+        const answerOption4 = data[indexes[3]]
+        setCountries(answerOption4)
+        const answerOptions = [answerOption3, answerOption1, answerOption4, answerOption2];
         answerOptions.sort(() => { return 0.5 - Math.random() });
         setAnswerText(answerOptions)
     }
     useEffect(() => {
         fetchCountries()
-        setRandom(Math.floor(Math.random() * 2))
+        setRandom(Math.floor(Math.random() * 5))
     }, [])
 
 
