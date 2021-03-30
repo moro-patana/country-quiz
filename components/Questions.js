@@ -7,7 +7,7 @@ export default function Questions() {
         <div className="question-component">
             <div className="question-container">
                 <div>
-                    {random % 2 === 0
+                    {random % 5 === 0
                         ?
                         <div>
                             <img className="flag-image" src={countries?.flag} alt={`This is ${countries?.name} flag`} />
