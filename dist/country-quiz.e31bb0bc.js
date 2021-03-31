@@ -33973,6 +33973,7 @@ function ContextProvider({
     setNextQuestion(true);
     setIsTryAgain(false);
     setDisabled(false);
+    setScore(0);
   }
 
   return /*#__PURE__*/_react.default.createElement(Context.Provider, {
@@ -34207,7 +34208,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61552" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52534" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -74,6 +74,7 @@ export default function ContextProvider({ children }) {
         setNextQuestion(true)
         setIsTryAgain(false)
         setDisabled(false)
+        setScore(0)
     }
 
     return (

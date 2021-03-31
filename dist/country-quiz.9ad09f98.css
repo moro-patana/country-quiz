@@ -141,6 +141,7 @@ img {
     align-items: center;
     padding-top: 15px;
     padding-left: 19px;
+    padding-right: 19px;
     padding-bottom: 14px;
 }
 .answer-button:hover {
