@@ -4,10 +4,12 @@ html {
 }
 body {
     margin: 0;
-    padding: 1rem;
     background-image: url("./img/background.png");
     background-repeat: no-repeat;
     background-size: cover;
+}
+#root {
+    padding: 1rem;
 }
 h1 {
     margin: 0;
@@ -34,10 +36,6 @@ img {
 .cup {
     width: 238px;
     height: 128.58px;
-}
-.main {
-    padding-top: 188px;
-    padding-bottom: 332px;
 }
 .quiz-card {
     max-width: 464px;
@@ -204,7 +202,7 @@ img {
 }
 
 @media (min-width: 1114px) {
-    #root{
+    .app {
         max-width: 464px;
         margin: 0 auto;
     }
