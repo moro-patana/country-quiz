@@ -13,9 +13,8 @@
 </div>
 
 ## Overview
-![screenshot](https://iili.io/KTALf2.png)
+![screenshot](https://iili.io/qk3lPs.png)
 
-![screenshot](https://iili.io/KTAZU7.png)
 
 - This project is built with react hooks and the countries are from an api.
 
@@ -59,12 +58,6 @@ $ npm start or parcel index.html
 -   GitHub [Manjaka](https://github.com/moro-patana/country-quiz)
 
 # Quiz
-## Steps:
- - Install react and react-dom
- - Create index.html and add div has id root inside.
- - create index.js and link it to the index.html.
- - Create a folder where you store the components or images. 
-
  ### Let's start:
    1. Index.js file
 
@@ -95,7 +88,7 @@ $ npm start or parcel index.html
 
 
 **NB**: Nice challenge!
-Learn new thing and make use more creative.
+Learn new thing and make us more creative.
 
   
 
