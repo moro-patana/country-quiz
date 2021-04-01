@@ -7,9 +7,17 @@ body {
     background-image: url("/background.59c06501.png");
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
 }
 #root {
     padding: 1rem;
+}
+.main {
+    max-width: 464px;
+    margin: auto;
 }
 h1 {
     margin: 0;
@@ -38,7 +46,7 @@ img {
     height: 128.58px;
 }
 .quiz-card {
-    max-width: 464px;
+    /* max-width: 464px; */
     padding-top: 68px;
     padding-bottom: 68px;
     padding-left: 32px;
@@ -202,7 +210,7 @@ img {
 }
 
 @media (min-width: 1114px) {
-    .app {
+    .main {
         max-width: 464px;
         margin: 0 auto;
     }
